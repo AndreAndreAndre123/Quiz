@@ -17,7 +17,13 @@ let svar12 = document.querySelector("#j1");
 //Check knapp
 let checkBtn = document.querySelector("#check");
 
+//points Div
+let pointsContainer = document.querySelector("#pointsContainer");
+
+
 checkBtn.addEventListener("click", () => {
+    
+    
     let points = 0; 
 
     if (svar1.checked === true){points ++;}
@@ -30,6 +36,39 @@ checkBtn.addEventListener("click", () => {
     if (svar8.checked === true){points ++;}
     if (svar9.checked === true){points ++;}
     if (svar10.checked === true && svar11.checked === true && svar12.checked === false){points ++;}
+    
+    //logga points
+    let pointsText = document.createElement("h2");
+    pointsText.innerText = `you got ${points}/10 points`;
+    if(points > 7.5){
+        pointsText.style.color = "green";
+        pointsContainer.appendChild(pointsText);
+    } else if( points > 5){
+        pointsText.style.color = "orange";
+        pointsContainer.appendChild(pointsText);
+    }else if(points < 5){
+        pointsContainer.appendChild(pointsText);
+    }
+
+
+
+    if(points > 7.5 && pointsContainer.hasChildNodes){
+        pointsContainer.removeChild(pointsContainer.firstElementChild);
+        pointsText.style.color = "green";
+        pointsContainer.appendChild(pointsText);
+    } else if( points > 5 && pointsContainer.hasChildNodes){
+        pointsContainer.removeChild(pointsContainer.firstElementChild);
+        pointsText.style.color = "orange";
+        pointsContainer.appendChild(pointsText);
+    } else if(points < 5){
+        pointsContainer.removeChild(pointsContainer.firstElementChild);
+        pointsContainer.appendChild(pointsText);
+    }
+    
+    
+    
+    
+    
     console.log(points);
 })
 
@@ -40,3 +79,7 @@ toggle.addEventListener("click", () => {
     document.body.classList.toggle("togglee");
 
 })
+
+/* if(pointsContainer.hasChildNodes){
+    pointsContainer.removeChild(pointsText);
+}  */
