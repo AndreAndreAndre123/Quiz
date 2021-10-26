@@ -1,0 +1,32 @@
+
+.fragorna{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    
+    
+}
+
+
+
+
+#container {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.togglee {
+    background-color: black;
+    color: white;
+}
+li {
+    list-style-type: none;
+  }
+
+
+
+
+
+
