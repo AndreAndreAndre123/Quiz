@@ -19,7 +19,7 @@ let checkBtn = document.querySelector("#check");
 
 //points Div
 let pointsContainer = document.querySelector("#pointsContainer");
-
+let pointsText = document.createElement("h2");
 
 checkBtn.addEventListener("click", () => {
     
@@ -38,7 +38,7 @@ checkBtn.addEventListener("click", () => {
     if (svar10.checked === true && svar11.checked === true && svar12.checked === false){points ++;}
     
     //logga points
-    let pointsText = document.createElement("h2");
+    
     pointsText.innerText = `you got ${points}/10 points`;
     if(points > 7.5){
         pointsText.style.color = "green";
@@ -80,6 +80,20 @@ toggle.addEventListener("click", () => {
 
 })
 
-/* if(pointsContainer.hasChildNodes){
-    pointsContainer.removeChild(pointsText);
-}  */
+//restart
+let restart = document.querySelector("#restart");
+let radio = document.getElementsByTagName("input");
+console.log(radio);
+
+restart.addEventListener("click", () => {
+     for(i = 0; i < radio.length; i++){
+        radio[i].checked = false;
+    }
+        document.documentElement.scrollTop = 0
+       if(pointsContainer.childElementCount === 1){
+        pointsContainer.removeChild(pointsText);
+       }
+       
+
+    
+})
