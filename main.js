@@ -46,7 +46,8 @@ checkBtn.addEventListener("click", () => {
     } else if( points > 5){
         pointsText.style.color = "orange";
         pointsContainer.appendChild(pointsText);
-    }else if(points < 5){
+    }else if(points <= 5){
+        pointsText.style.color =""
         pointsContainer.appendChild(pointsText);
     }
 
@@ -60,16 +61,12 @@ checkBtn.addEventListener("click", () => {
         pointsContainer.removeChild(pointsContainer.firstElementChild);
         pointsText.style.color = "orange";
         pointsContainer.appendChild(pointsText);
-    } else if(points < 5){
+    } else if(points <= 5){
+        pointsText.style.color =""
         pointsContainer.removeChild(pointsContainer.firstElementChild);
         pointsContainer.appendChild(pointsText);
     }
     
-    
-    
-    
-    
-    console.log(points);
 })
 
 //Dark/light mode knapp
@@ -83,7 +80,6 @@ toggle.addEventListener("click", () => {
 //restart
 let restart = document.querySelector("#restart");
 let radio = document.getElementsByTagName("input");
-console.log(radio);
 
 restart.addEventListener("click", () => {
      for(i = 0; i < radio.length; i++){
@@ -95,5 +91,4 @@ restart.addEventListener("click", () => {
        }
        
 
-    
 })
